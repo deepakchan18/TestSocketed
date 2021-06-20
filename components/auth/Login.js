@@ -135,27 +135,29 @@ export class Login extends Component {
                     onEndEditing = {(e) => this.handleEmail(e.nativeEvent.text)}
                 />
                 
-                {this.state.isValidEmail ? null : <Text style={{marginTop: 0, fontSize: 14, color: '#ff1100', alignItems:'center', justifyContent:'center'}} >Email field is empty or badly formatted.</Text> }
+                {this.state.isValidEmail ? null : <Text style={{marginTop: 5, fontSize: 14, color: '#ff1100', alignItems:'center', justifyContent:'center'}} >Email field is empty or badly formatted.</Text> }
                 
+                <View style={{ backgroundColor: '#e5e5e5', height: 60, borderRadius:35, flexDirection: 'row', marginTop: 10, paddingBottom: 5, width: WIDTH -100, }} >
                 <TextInput
-                    style={{ backgroundColor: '#e5e5e5', width: WIDTH - 100, height: 60,borderRadius:35,paddingLeft:35, marginTop: 10, fontSize: 18, }}
+                    style={{ flex: 1, marginTop: Platform.OS === 'ios' ? 0 : -12, paddingLeft: 45, fontSize: 18, marginTop:6, }}
                     placeholder = 'Password'
                     secureTextEntry = {this.state.secureTextEntry ? true : false}
                     placeholderTextColor = '#858585'
                     onChangeText = {(password) => this.setState({ password })}
                     onEndEditing = {(e) => this.handlePass(e.nativeEvent.text)}
                 />
-                <TouchableOpacity style={{ top: -40, right: -125 }} onPress = {()=> this.setState({secureTextEntry: !this.state.secureTextEntry})} >
+                <TouchableOpacity style={{ right: 15, marginTop:20, }} onPress = {()=> this.setState({secureTextEntry: !this.state.secureTextEntry})} >
                     {this.state.secureTextEntry ? 
                         <Feather name="eye-off" color="grey" size={20} /> : 
                         <Feather name="eye" color="grey" size={20} /> }
                 </TouchableOpacity>
+                </View>
                 
-                {this.state.isValidPass ? null : <Text style={{marginTop: -20, fontSize: 14, color: '#ff1100', alignItems:'center', justifyContent:'center'}} >Password field should not empty.</Text> }
+                {this.state.isValidPass ? null : <Text style={{marginTop: 5, fontSize: 14, color: '#ff1100', alignItems:'center', justifyContent:'center'}} >Password field should not empty.</Text> }
                 
                 <TouchableOpacity
                     onPress={() => this.props.navigation.navigate("ForgotPass")}
-                    style={{ top: 0, left: 75}}
+                    style={{ marginTop: 10, left: 75}}
                     >
                     <Text style={{textAlign: 'center', color: '#5c5c5c'}} >forgot password ?</Text>
                 </TouchableOpacity>

@@ -11,10 +11,11 @@ export default class SignupSetupPic extends Component {
                 <Text style={{ alignItems:'center', fontSize: 28, marginTop: 175, color:'#571dde' }} >Add your profile picture</Text>
                 <Text style={{ alignItems:'center', marginTop: 10,color: '#858585' }} >This will be displyed in your public profile</Text>
                 <TouchableOpacity 
-                    style={{ backgroundColor: '#858585',width: WIDTH - 265, height: 125,borderRadius: 100, marginTop: 45 }} 
+                    //style={{ backgroundColor: '#858585',width: WIDTH - 265, height: 125,borderRadius: 100, marginTop: 45 }} 
                     >
                     <Image 
-                        
+                        source = { require('../../assets/propicbg.png') }
+                        style = {{ marginTop: 30, }}
                     />
                 </TouchableOpacity>
                 <TouchableOpacity 
